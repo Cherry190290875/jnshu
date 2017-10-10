@@ -1,0 +1,17 @@
+.wrap {
+	width: 95%;
+	margin: 0 auto;
+	padding-bottom: 90%;
+}
+.box {
+	width: 32%;
+	padding-bottom: 30%;
+	background-color: yellow;
+	float: left;
+	margin-right: 2%;
+	margin-top: 2%;
+	border-radius: 16%;
+}
+.box-right {
+	margin-right: 0;
+}

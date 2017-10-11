@@ -1,0 +1,60 @@
+body {
+	background: #68cdd5;
+	font-size: 0.24rem;
+	color:#fff;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9;
+}
+.header{
+	margin-top: 1.2rem;
+}
+.header img {
+	padding-left: 0.3rem;
+}
+.title {
+	margin:0 auto;
+	margin-top: 0.4rem;
+	color:#fff;
+}
+.title .left,
+.title .right {
+	float: left;
+	width: 50%;
+}
+.title .left img {
+	float: right;
+	padding-right: 2%;
+}
+.title .china {
+	font-size: 0.4rem;
+	line-height: 0.5rem;
+	letter-spacing: 0.15rem;
+}
+.title .text {
+	font-size: 0.18rem;
+	line-height: 0.3rem;
+}
+.introduce {
+	padding-left:1rem;
+	padding-right: 1rem;
+	margin-top: 2rem;
+	font-size: 0.3rem;
+}
+.contact {
+	margin-top: 1.75rem;
+}
+.con-left,
+.con-right {
+	float: left;
+	width: 50%;
+}
+.con-left p,
+.con-right p
+{
+	text-align: center;
+	font-size: 0.24rem;
+	margin-top: 0.3rem;
+}

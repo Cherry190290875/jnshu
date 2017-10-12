@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>H5新增表单元素</title>
+	</head>
+	<body>
+		<div>
+			<label for="masterpiece">选出你喜欢的书</label>
+			<input type="hidden" id="masterpiece" list="tips" placeholder="请输入名著名称"/>
+			<detalist id="tips">
+				<select>
+					<option value="红高粱">红高粱</option>
+					<option value="活着">活着</option>
+					<option value="偷影子的人">偷影子的人</option>
+					<option value="稻田里的守望者">稻田里的守望者</option>
+					<option value="岛上书店">岛上书店</option>
+				</select>
+			</detalist>
+		</div>
+		<div>
+			<select>
+				<optgroup label="情感类书籍">
+					<option value="红高粱">红高粱</option>
+					<option value="活着">活着</option>
+				</optgroup>
+				<optgroup label="时间管理">
+					<option value="稻田里的守望者">稻田里的守望者</option>
+					<option value="岛上书店">岛上书店</option>
+				</optgroup>
+			</select>
+		</div>
+	</body>
+</html>

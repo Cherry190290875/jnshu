@@ -1,0 +1,83 @@
+html,body {
+	font-size: 62.5%;
+	font-family: "黑体";
+	background: #eff0f4;
+}
+.header {
+	width: 100%;
+	height:0.8rem ;
+	background: #5fc0cd;
+	font-size: 0.36rem;
+	line-height: 0.8rem;
+	color:#fff;
+}
+.header .hLeft,
+.header .hMiddle,
+.header .hRight
+{
+	width: 33%;
+	float: left;
+}
+.header .hLeft {
+	position: relative;
+	left: 0.3rem;
+}
+.header .hMiddle {
+	text-align: center;
+}
+.header .hRight {
+	position: relative;
+	text-align: right;
+	right: 0.3rem;
+}
+
+.wrap {
+	width: 100%;
+	height:0.5rem;
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+	background: #fff;
+	position: relative;
+	margin-top: 0.15rem;
+}
+.wrap input {
+	color:#fff;
+	width: 100%;
+	line-height: 0.5rem;
+	font-size: 0.32rem;
+	position: absolute;
+	top:0.25rem;
+	padding-left:1.5rem;
+	border:none;
+}
+.wrap .wLeft {
+	position:absolute;
+	left:0.3rem;
+	top:0.32rem;
+	padding-right:0.3rem;
+	border-right:2px solid #ddd;
+}
+.wrap .wLeft .bg{
+	background: url(../image/task4/iphone@2x.png) center no-repeat;
+	background-size: 100% 100%;
+	width: 0.27rem;
+	height: 0.41rem;
+	
+}
+.wrap .wLeft .bgs{
+	background: url(../image/task4/locked-2@2x.png) center no-repeat;
+	background-size: 100% 100%;
+	width: 0.27rem;
+	height: 0.41rem;
+}
+.login {
+	width: 100%;
+	margin-top: 0.7rem;
+	height: 1rem;
+	background: #5fc0cd;
+	color:#fff;
+	font-size: 0.36rem;
+	text-align: center;
+	line-height: 1rem;
+	border:none;
+}

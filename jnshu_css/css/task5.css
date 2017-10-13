@@ -26,7 +26,7 @@ html,body {
 	line-height: 0.8rem;
 }
 .content {
-	flex: 1;
+	flex: auto;
 }
 .bg {
 	width: 100%;
@@ -114,6 +114,7 @@ html,body {
 	padding-right: 0.3rem;
 	padding-left: 0.3rem;
 	margin-right: 0.3rem;
+	flex:1;
 }
 .items ul li:nth-child(1) {
 	border-right:2px solid #e1e5e7;
@@ -125,6 +126,9 @@ html,body {
 	flex: 3;
 	padding-right: 0.3rem;
 }
+.item:last-child {
+	padding-bottom: 1.26rem;
+}
 .color-9 {
 	color:#999;
 }
@@ -133,8 +137,11 @@ html,body {
 	align-content: space-between;
 	width:100%;
 	flex:1;
-	position:absolute;
-	bottom:0.4rem;
+	position:fixed;
+	bottom:0;
+	background: #fff;
+	z-index: 9;
+	height: 1.26rem;
 }
 .footer div{
 	height: 0.86rem;

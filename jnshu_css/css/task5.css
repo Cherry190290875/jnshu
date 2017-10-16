@@ -127,12 +127,9 @@ html,body {
 	margin-right: 0.3rem;
 }
 .item ul li:nth-child(2) {
-	flex: 3;
+	flex: auto;
 	padding-right: 0.3rem;
 }
-/*.item:last-child {
-	padding-bottom: 1.26rem;
-}*/
 .color-9 {
 	color:#999;
 }

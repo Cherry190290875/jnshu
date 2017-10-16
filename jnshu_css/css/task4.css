@@ -81,4 +81,5 @@ html,body {
 	text-align: center;
 	line-height: 1rem;
 	border:none;
+	outline: none;
 }

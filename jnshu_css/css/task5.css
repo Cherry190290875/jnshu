@@ -119,6 +119,7 @@ html,body {
 	padding-right: 0.3rem;
 	padding-left: 0.3rem;
 	margin-right: 0.3rem;
+	flex:1;
 }
 .items ul li:nth-child(1) {
 	border-right:2px solid #e1e5e7;
@@ -127,7 +128,7 @@ html,body {
 	margin-right: 0.3rem;
 }
 .item ul li:nth-child(2) {
-	flex: auto;
+	flex: 9;
 	padding-right: 0.3rem;
 }
 .color-9 {

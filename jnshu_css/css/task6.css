@@ -24,6 +24,9 @@
 	left:0;
 	top:0.88rem;
 	z-index:3;
+	background: #fff;
+	width: 100%;
+	border-bottom: 0.01rem solid #DDD;
 }
 .footer {
 	width: 100%;
@@ -57,7 +60,7 @@
 	text-align: center;
 }
 .rule {
-	border-right:0.01rem solid #ddd;
+	border-right:0.02rem solid #ddd;
 }
 .rule:last-child {
 	border-right:0;
@@ -146,10 +149,18 @@
 	font-size: 0.28rem;
 	color:#000000 ;
 	line-height: 0.34rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 .color-red {
 	color:#e63b0e;
 	line-height: 0.34rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 .icon-back {
 	width: 0.2rem;
@@ -168,4 +179,10 @@
 }
 button {
 	outline: none;
+}
+.fl {
+	line-height: 0.8rem !important;
+}
+.fl:active,.fl:focus{
+	background: #fff;
 }

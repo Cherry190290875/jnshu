@@ -78,6 +78,7 @@
 	padding-top: 0.56rem;
 	text-align: right;
 	color:#55a8b3;
+	padding-right: 0.3rem;
 }
 .icon-home {
 	background: url(../image/task6/img.png) no-repeat;
@@ -102,6 +103,7 @@
 .me {
 	text-align: left;
 	color:#999;
+	padding-left: 0.3rem;
 }
 .ft-bg {
 	width: 0.94rem;

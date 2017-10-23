@@ -1,0 +1,17 @@
+html,body {
+	width: 100%;
+	height: 100%;
+	font-size: 62.5%;
+}
+.pouper {
+	width: 100%;
+	height: 1.6rem;
+	background: #000;
+}
+.wrap-pouper {
+	width: 1200px;
+	margin: 0 auto;
+	height: 1.6rem;
+	background: url(../image/header/59ec0710N82dd8ed5.jpg);
+	background-size:100% 100%;
+}

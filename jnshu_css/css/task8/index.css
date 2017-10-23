@@ -44,6 +44,7 @@ html,body {
 	line-height: 100px;
 	width: 110px;
 	text-align: center;
+	font-size: 14px;
 }
 .nav ul li a {
 	color:#fff;
@@ -339,7 +340,7 @@ html,body {
 }
 .nav ul li a:hover {
 	text-decoration: none;
-	padding-bottom: 35px;
+	padding-bottom: 39px;
 	border-bottom: 3px solid #FFF;
 }
 .nav-left {
@@ -619,7 +620,7 @@ html,body {
 	font-size: 14px;
 	text-decoration: none;	
 }
-.contact-left ul li:hover a {
+.contact-left ul li a:hover {
 	cursor: pointer;
 	color:#ff650e !important;
 }

@@ -115,7 +115,7 @@ html,body {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: flex-start;
 }
 .wz{
 	width: 100%;
@@ -177,4 +177,7 @@ html,body {
 }
 .icon2 {
 	background-image: url(../../image/task7/icon2@2x.png) ;
+}
+.div1 {
+	margin-right:0.1rem; 
 }

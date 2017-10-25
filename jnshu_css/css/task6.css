@@ -188,3 +188,6 @@ button {
 .fl:active,.fl:focus{
 	background: #fff;
 }
+.btn {
+	padding:4px 12px !important;
+}

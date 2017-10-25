@@ -37,6 +37,7 @@ html,body {
 	float: right;
 	position: relative;
 	margin-right: -35px;
+	margin-bottom: 0 !important;
 }
 .nav ul li{
 	float: left;
@@ -340,7 +341,7 @@ html,body {
 }
 .nav ul li a:hover {
 	text-decoration: none;
-	padding-bottom: 39px;
+	padding-bottom: 40px;
 	border-bottom: 3px solid #FFF;
 }
 .nav-left {
@@ -559,7 +560,6 @@ html,body {
 	background-size:100% 100%;
 }
 .contact-content {
-	position: relative;
 	margin-top: 20px;
 }
 .contact-left {
@@ -572,16 +572,12 @@ html,body {
 	box-sizing: border-box;
 	z-index:999;
 }
-.contact-right {
-	width: 100%;
-	margin-left: -330px;
-	float: right;	
-}
 .cc-right {
 	border:1px solid #ddd;
 	box-sizing: border-box;
 	padding-bottom: 100px;
 	margin-left: 330px;
+	word-wrap: break-word;
 }
 .slocal {
 	padding-top:10px;
@@ -620,7 +616,11 @@ html,body {
 	font-size: 14px;
 	text-decoration: none;	
 }
-.contact-left ul li a:hover {
+.contact-left ul li:hover {
+	background: #f3a846;
+	cursor: pointer;
+}
+.contact-left ul li:hover a {
 	cursor: pointer;
 	color:#ff650e !important;
 }
@@ -630,6 +630,7 @@ html,body {
 	padding-bottom: 10px;
 	padding-left: 70px;
 	padding-right: 70px;
+	height: 120px;
 }
 .right-lf {
 	float: left;
@@ -650,4 +651,7 @@ html,body {
 	padding-right: 70px;
 	text-indent:28px ;
 	color:#999;
+}
+.item img {
+	width: 100%;
 }

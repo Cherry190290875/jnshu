@@ -108,7 +108,7 @@ html,body {
 	padding-left:0.4rem;
 	padding-right:0.46rem;
 	height: 100%;
-	overflow: scroll;
+	overflow: hidden;
 }
 .cn-wrap {
 	padding: 0.2rem 0.4rem;

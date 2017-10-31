@@ -1,0 +1,31 @@
+.swrap {
+	width: 100%;
+}
+.wrap {
+	width: 1190px;
+	margin: 0 auto;
+	position: relative;
+}
+.red {
+	color: #f10215;
+}
+a {
+	color:#999;
+	text-decoration: none;
+}
+a:hover {
+	color:#f10215;
+}
+input:focus {
+	outline: none;
+}
+.white {
+	color:#FFF;
+}
+.bottom-30 {
+	margin-bottom: 30px;
+}
+.right-10 {
+	margin-right: 10px;
+}
+

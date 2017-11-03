@@ -187,7 +187,24 @@
 					</ul>
 				</div>
 				<div class="fs-middle">
-					<div style="height: 340px;background: greenyellow;width: 100%;margin-bottom: 10px;"></div>
+					<div  id="container">
+						<div id="list">
+							<a href=""><img src="image/banner/59e5ab15N6b634214.jpg"></a>
+							<a href=""><img src="image/banner/59e89bcbN15ef7734.jpg"></a>
+							<a href=""><img src="image/banner/59e7fc9eN6347aad2.jpg"></a>
+							<a href=""><img src="image/banner/59e9be8eNceb22aa4.jpg"></a>
+							<a href=""><img src="image/banner/59e9c783N0df2ce6e.jpg"></a>
+						</div>
+						<div id="buttons">
+							<span index="1" class="on"></span>
+							<span index="2"></span>
+							<span index="3"></span>
+							<span index="4"></span>
+							<span index="5"></span>
+						</div>
+						<a href="javascript:;" class="arrow-banner" id="prev">&lt;</a>
+						<a href="javascript:;" class="arrow-banner" id="next">&gt;</a>
+					</div>
 					<div>
 						<a href="">
 							<img src="image/banner/59e717b3N9f59794f.jpg" alt="" />
@@ -809,6 +826,68 @@
 			$('.close').click(function(){
 				$('.pouper').hide()
 			})
+			//banner轮播
+			var timer;
+			var index=1;
+			function animate(offset) {
+				var newLeft = parseInt($('#list').css('left'))+offset;
+				$('#list').css('left',newLeft+'px')
+				if(newLeft<-3160) {
+					$('#list').css('left','-790px')
+				}
+				if(newLeft>-790){
+					$('#list').css('left','-3160px')
+				}
+			}
+			$('#next').click(function() {
+				index+=1;
+				if(index>5){
+					index=1;
+				}
+				animate(790)
+				buttonsShow();
+			})
+			$('#prev').click(function(){
+				index-=1;
+				if(index<1){
+					index=5
+				}
+				animate(-790);
+				buttonsShow();
+			})
+			$('#container').mouseover(function(){
+				clearInterval(timer)
+			})
+			$('#container').mouseout(function(){
+				play()
+			})
+			function play() {
+				timer = setInterval(function(){
+					$('#next').click()
+				},1500)
+			}
+			play();
+			function buttonsShow (){
+				for(var i=0;i<$('#buttons span').length;i++){
+					if($('#buttons span')[i].className == "on") {
+						$('#buttons span')[i].className = ""
+					}
+				}
+				$('#buttons span')[index-1].className="on"
+			}
+			for(var i=0;i<$('#buttons span').length;i++){
+				(function(i){
+					$('#buttons span').eq(i).click(function(){
+						var clickIndex = parseInt(this.getAttribute('index'))
+						var offset = 790*(index- clickIndex)
+						console.log(offset)
+						animate(offset);
+						index = clickIndex;
+						buttonsShow()
+						console.log(i)
+					})
+				})(i)
+			}
 		</script>
 	</body>
 </html>

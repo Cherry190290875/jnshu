@@ -195,7 +195,7 @@
 							<a href=""><img src="image/banner/59e9be8eNceb22aa4.jpg"></a>
 							<a href=""><img src="image/banner/59e9c783N0df2ce6e.jpg"></a>
 						</div>
-						<div id="buttons">
+						<div id="buttons" class="buttons">
 							<span index="1" class="on"></span>
 							<span index="2"></span>
 							<span index="3"></span>
@@ -286,7 +286,7 @@
 				<span class="clock"></span>
 				<span class="box-title">京东秒杀</span>
 				<span class="box-text">总有你想要的低价<a href=""><i class="icon-enter"></i></a></span>
-				<p class="box-right">当前场次<span><b>01</b>: <b>02</b>: <b>03</b></span>后结束抢购 </p>
+				<p class="box-right">当前场次<span><b class="hour">01</b>: <b class="minute">02</b>: <b class="second">03</b></span>后结束抢购 </p>
 			</div>
 		</div>
 		
@@ -348,18 +348,19 @@
 				</ul>
 			</div>
 			<div class="ms-right" align="center">
-				<ul>
-					<li>
-						<a href="">
-							<img src="image/seckill/59e9def1N4a1f8bcf.png" alt="" />
-						</a>
-					</li>
-					<li style="display: none;">
-						<a href="">
-							<img src="image/seckill/59f60c3eN974e164e.jpg" alt="" />
-						</a>
-					</li>
-				</ul>
+				<div class="ms-list">
+					<a href="">
+					<img src="image/seckill/59e9def1N4a1f8bcf.png" alt="" />
+					</a>	
+					<a href="">
+						<img src="image/seckill/59f60c3eN974e164e.jpg" alt="" />
+					</a>
+				</div>
+				<div class="buttons buttons-bottom">
+					<span index="1" class="on"></span>
+					<span index="2" ></span>
+				</div>
+					
 			</div>
 		</div>
 		
@@ -809,12 +810,19 @@
 			<div class="welfare-right">
 				<div class="welfare-head welfare-head-right">
 					<i class="head-top-bg welfare-bg"></i>
-					<i class="head-top welfare-head-icon"></i>
+					<i class="head-top welfare-head-fs-icon"></i>
 					<span class="box-title box-head-title">觅me</span>
 					<span class="box-text box-text-content">探索生活<a href=""><i class="icon-enter"></i></a></span>
 				</div>
 				<div class="welfare-right-content">
-					
+					<div class="welfare-right-item">
+						<a href="">
+							<img src="image/seckill/59fc1489Nc30e1f22.jpg" alt="" width="200"/>
+							<span class="min-title">iPhone X首发！全世界男人最担心的事情还是发生</span>
+							<span class="min-desc">iPhone X首发！全世界男...</span>
+							<i>查看原文</i>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -880,6 +888,7 @@
 					$('#buttons span').eq(i).click(function(){
 						var clickIndex = parseInt(this.getAttribute('index'))
 						var offset = 790*(index- clickIndex)
+						console.log(index)
 						console.log(offset)
 						animate(offset);
 						index = clickIndex;
@@ -888,6 +897,74 @@
 					})
 				})(i)
 			}
+			//秒杀右侧轮播
+			var setTimer;
+			function ms(offset) {
+				var newLeft = parseInt($('.ms-list').css('left'))-offset
+				$('.ms-list').css('left',newLeft+"px")
+				if (newLeft>-190) {
+					$('.ms-list').css('left',"190px")
+				}
+				if(newLeft<-190){
+					$('.ms-list').css('left',"0px")
+				}
+			}
+			function msPlay() {
+				setTimer = setInterval(function(){
+					ms(190);
+				},1500)
+			}
+			msPlay();
+			$('.ms-right').mouseover(function(){
+				clearInterval(setTimer)
+			})
+			$('.ms-right').mouseout(function(){
+				msPlay()
+			})
+			function buttons() {
+				for(var i=0;i<$('.buttons-bottom span').length;i++) {
+					if($('.buttons-bottom span')[i].className == "on") {
+						console.log($('.buttons-bottom span')[i])
+						$('.buttons-bottom span')[i].className = ""
+					}
+				}
+				$('.buttons-bottom span')[index-1].className ="on"
+			}
+			for(var i=0;i<$('.buttons-bottom span').length;i++){
+				(function(i){
+					$('.buttons-bottom span').eq(i).click(function(){
+						var newClick = parseInt(this.getAttribute('index'))
+						var offset = 190*(index-newClick)
+						ms(offset);
+						index = newClick
+						buttons();
+					})
+				})(i)
+			}
+			
+			//倒计时
+			 
+			var intTime =parseInt(8500); //倒计时总秒数
+			$(function(){
+				window.setInterval(function(){
+					var hour=0,
+					minute = 0,
+					second = 0;
+					if (intTime>0) {
+						var hour = Math.floor(intTime/(60*60));
+					 	minute = Math.floor(intTime/60)-(hour*60);
+					 	second = Math.floor(intTime)-(minute*60)-(hour*60*60);
+					}
+					if(hour<=9) hour = "0"+hour;
+				 	if(minute<=9) minute= "0" +minute;
+				 	if(second<=9) second = "0"+second;
+				 	$('.hour').html(hour);
+				 	$('.minute').html(minute);
+				 	$('.second').html(second);
+				 	intTime--;
+				},1000) 	
+			});
+			
 		</script>
 	</body>
 </html>

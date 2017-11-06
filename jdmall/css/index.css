@@ -582,8 +582,11 @@ html,body {
 .ms-right {
 	float: left;
 	width: 190px;
+	height: 225px;
 	padding-top:12px;
 	padding-bottom: 13px;
+	position: relative;
+	overflow: hidden;
 }
 .box {
 	width: 390px;
@@ -848,8 +851,8 @@ html,body {
 .welfare-bg {
 	border-right: 27px solid #76488e;
 }
-.welfare-head-icon {
-	background-position: 0px -161px;
+.welfare-head-fs-icon {
+	background-position: 0 -161px;
 }
 .welfare-right-content {
 	width: 330px;
@@ -874,7 +877,7 @@ html,body {
 	height: 340px;
 	float: left;
 }
-#buttons {
+.buttons {
 	position: absolute;
 	bottom:10px;
 	width: 116px;
@@ -886,7 +889,7 @@ html,body {
 	background: rgba(255,255,255,0.3);
 	border-radius: 12px;
 }
-#buttons span {
+.buttons span {
 	width: 12px;
 	height: 12px;
 	border-radius: 12px;
@@ -894,10 +897,10 @@ html,body {
 	display: inline-block;
 	margin-right: 10px;
 }
-#buttons span:last-child {
+.buttons span:last-child {
 	margin-right: 0;
 }
-#buttons .on {
+.buttons .on {
 	background: #db192a;
 }
 .arrow-banner {
@@ -922,4 +925,57 @@ html,body {
 }
 #next {
 	right: 0;
+}
+.ms-list {
+	width: 390px;
+	height: 225px;
+	position: absolute;
+}
+.ms-list img {
+	width: 190px;
+	height: 225px;
+	float: left;
+}
+.buttons-bottom {
+	bottom:20px;
+	background: none;
+}
+.welfare-right-item {
+	position: relative;
+}
+..welfare-right-item img {
+	float: left;
+	width: 200px;
+    height: 140px;
+    margin-right: 8px;
+}
+.welfare-right-item span {
+	width: 122px;
+}
+.welfare-right-item .min-title {
+	font-size: 14px;
+	color:#333;
+	font-weight: 700;
+	line-height: 18px;
+	display: block;
+	overflow: hidden;
+	word-break: break-all;
+	text-align: justify;
+	float: right;
+}
+.welfare-right-item .min-desc {
+	float: right;
+	margin-top: -75px;
+	text-overflow: ellipsis;
+	font-size: 12px;
+	line-height: 18px;
+	color:#999;
+	word-break: break-all;
+	display: inline-block;
+}
+.welfare-right-item i {
+	display: inline-block;
+	float: right;
+	margin-top: -57px;
+	left: -10px;
 }

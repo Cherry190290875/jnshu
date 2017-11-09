@@ -28,4 +28,7 @@ input:focus {
 .right-10 {
 	margin-right: 10px;
 }
+.border-11 {
+	border-right: none !important;
+}
 

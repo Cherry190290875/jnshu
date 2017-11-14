@@ -26,34 +26,37 @@
 					<ul>
 						<li><a href="" >您好，请登录</a><a href="" class="red">免费注册</a></li>
 						<li><a href="">我的订单</a></li>
-						<li class="jd"><a href="">我的京东<i class="iconfont icon-down-trangle-copy-copy "></i></a></li>
+						<li class="jd">
+							<a href="">我的京东<i class="iconfont icon-down-trangle-copy-copy "></i></a>
+							<div class="jd-hover">
+								<div class="jd-title">
+									<a href="">我的京东<i class="iconfont icon-down-trangle-copy-copy "></i>
+								</div>
+								<div class="jd-content">
+									<ul class="jd-ul jd-ul-1">
+										<li><a href="">待处理订单</a></li>
+										<li><a href="">消息</a></li>
+										<li><a href="">返修退换货</a></li>
+										<li><a href="">我的问答</a></li>
+										<li><a href="">降价商品</a></li>
+										<li><a href="">我的关注</a></li>
+									</ul>
+									<ul class="jd-ul">
+										<li><a href="">我的京豆</a></li>
+										<li><a href="">我的优惠券</a></li>
+										<li><a href="">我的白条</a></li>
+										<li><a href="">我的理财</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
 						<li><a href="">京东会员</a></li>
 						<li><a href="">企业采购</a></li>
 						<li class="jd-service"><a href="">客户服务<i class="iconfont icon-down-trangle-copy-copy"></i></a></li>
 						<li class="jd-navigation"><a href="">网站导航<i class="iconfont icon-down-trangle-copy-copy"></i></a></li>
 						<li><a href="">手机京东</a></li>
 					</ul>
-					<div class="jd-hover">
-						<div class="jd-title">
-							<a href="">我的京东<i class="iconfont icon-down-trangle-copy-copy "></i>
-						</div>
-						<div class="jd-content">
-							<ul class="jd-ul jd-ul-1">
-								<li><a href="">待处理订单</a></li>
-								<li><a href="">消息</a></li>
-								<li><a href="">返修退换货</a></li>
-								<li><a href="">我的问答</a></li>
-								<li><a href="">降价商品</a></li>
-								<li><a href="">我的关注</a></li>
-							</ul>
-							<ul class="jd-ul">
-								<li><a href="">我的京豆</a></li>
-								<li><a href="">我的优惠券</a></li>
-								<li><a href="">我的白条</a></li>
-								<li><a href="">我的理财</a></li>
-							</ul>
-						</div>
-					</div>
+
 					<div class="service-hover">
 						<div class="jd-title">
 							<a href="">客户服务<i class="iconfont icon-down-trangle-copy-copy "></i>
@@ -1190,7 +1193,7 @@
 							</ul>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
@@ -1364,14 +1367,15 @@
 			//秒杀右侧轮播
 			var setTimer;
 			function ms(offset) {
-				var newLeft = parseInt($('.ms-list').css('left'))-offset
-				$('.ms-list').css('left',newLeft+"px")
-				if (newLeft>-190) {
-					$('.ms-list').css('left',"0px")
-				}
-				if(newLeft<-190){
-					$('.ms-list').css('left',"0px")
-				}
+
+                $('.ms-list').css('left',offset)
+
+//				if (newLeft>-190) {
+//					$('.ms-list').css('left',"0px")
+//				}
+//				if(newLeft<-190){
+//					$('.ms-list').css('left',"0px")
+//				}
 			}
 			function msPlay() {
 				setTimer = setInterval(function(){
@@ -1383,9 +1387,9 @@
 				clearInterval(setTimer)
 			})
 			$('.ms-right').mouseout(function(){
-				msPlay()
+//				msPlay()
 			})
-			function buttons() {
+			function buttons(index) {
 				for(var i=0;i<$('.buttons-bottom span').length;i++) {
 					if($('.buttons-bottom span')[i].className == "on") {
 						$('.buttons-bottom span')[i].className = ""
@@ -1397,14 +1401,13 @@
 			for(var i=0;i<$('.buttons span').length;i++){
 				(function(i){
 					$('.buttons span').eq(i).click(function(){
-						var clickIndex = parseInt(this.getAttribute('index'))
-						var offset = 190*(index- clickIndex)
-						ms(offset);
-						index = clickIndex;
-						buttons()
-						console.log(i)
-					})
-				})(i)
+                    var clickIndex = parseInt(this.getAttribute('index'))
+                        console.log(clickIndex);
+                        $('.ms-list').css('left','-'+(clickIndex-1)*190+'px')
+                    	buttons(clickIndex)
+
+                })
+            })(i)
 			}
 			
 			//倒计时
@@ -1481,7 +1484,7 @@
 			$('.jd').mouseover(function(){
 				$('.jd-hover').show()
 			})
-			$('.jd').mouseout(function(){
+			$('.jd-hover').mouseout(function(){
 				$('.jd-hover').hide()
 			})
 			$('.jd-service').mouseenter(function(){

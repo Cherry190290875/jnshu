@@ -1,0 +1,42 @@
+/**
+ * Created by Administrator on 2017/11/15 0015.
+ */
+$('.jd').mouseover(function(){
+    $('.jd').css('background','#FFF')
+    $('.jd-hover').show()
+})
+$('.jd-hover').mouseout(function(){
+    $('.jd').css('background','#e3e4e5')
+    $('.jd-hover').hide()
+})
+$('.jd-service').mouseenter(function(){
+    $('.jd-service').css('background','#FFF')
+    $('.service-hover').show()
+})
+$('.jd-service').mouseleave(function(){
+    $('.jd-service').css('background','#e3e4e5')
+    $('.service-hover').hide()
+})
+$('.jd-navigation').mouseover(function(){
+    $('.jd-navigation').css('background','#FFF')
+    $('.navigation-hover').show()
+})
+$('.jd-navigation').bind('mouseleave',function(){
+    $('.jd-navigation').css('background','#e3e4e5')
+    $('.navigation-hover').hide()
+})
+$('.menu ul').mouseover(function(){
+    $('.popup').show().css('z-index','10')
+})
+$('.popup').mouseout(function(){
+    $('.popup').css('z-index','-1')
+})
+$('.icon-hover').bind('mouseover',function(){
+    $('.hover-icon').show()
+})
+$('.close-btn').click(function(){
+    $('.hover-icon').hide();
+    $('.icon-hover').unbind('mouseover',function(){
+        $('.hover-icon').show();
+    })
+})

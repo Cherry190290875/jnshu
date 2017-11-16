@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            outline: none;
+        }
+        body {
+            position: relative;
+        }
+        .fixed {
+            position: fixed;
+            left:150px;
+            top:300px;
+            width: 80px;
+        }
+        .fixed ul {
+            list-style: none;
+        }
+        .fixed ul li {
+            height:40px;
+            width: 80px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .fixed ul li a {
+            text-decoration: none;
+            background: #5fc0cd;
+            padding:9px 23px;
+            line-height: 22px;
+            word-break: keep-all;
+            color: #FFF;
+        }
+        .on {
+            display: block;
+        }
+        .off {
+            display: none;
+        }
+        .wrap {
+            width: 1200px;
+            margin:0 auto;
+        }
+        .tab-content {
+            width: 100%;
+            height:500px;
+            background: #ffc865;
+            border:1px solid #DDD;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed" align="center">
+        <ul>
+            <li>
+                <a href="#cloth" class="on">衣服</a>
+                <a href="#cloth" class="off">cloth</a>
+            </li>
+            <li>
+                <a href="#skin" class="on">护肤品</a>
+                <a href="#skin" class="off">skin</a>
+            </li>
+            <li>
+                <a href="#luxury" class="on">奢侈品</a>
+                <a href="#luxury" class="off">luxury</a>
+            </li>
+            <li>
+                <a href="#baby" class="on">母婴</a>
+                <a href="#baby" class="off">baby</a>
+            </li>
+            <li>
+                <a href="#food" class="on">食品</a>
+                <a href="#food" class="off">food</a>
+            </li>
+            <li>
+                <a href="#man" class="on">男装</a>
+                <a href="#man" class="off">man</a>
+            </li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div id="cloth" class="tab-content">衣服类展示</div>
+        <div id="skin" class="tab-content">护肤品类展示</div>
+        <div id="luxury" class="tab-content">奢侈品类展示</div>
+        <div id="baby" class="tab-content">母婴类展示</div>
+        <div id="food" class="tab-content">食品类展示</div>
+        <div id="man" class="tab-content">男装类展示</div>
+    </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $('.fixed ul li').eq(0).find('.on').css('display','none');
+        $('.fixed ul li').eq(0).find('.off').css({'display':'block','background':'red'});
+        for(var i=0;i<$('.fixed ul li').length;i++){
+            $('.fixed ul li').eq(i).mouseenter(function(){
+                $(this).find('.off').css({'display':'block','background':'red'});
+                $(this).find('.on').css('display','none')
+            })
+            $('.fixed ul li').eq(i).mouseleave(function(){
+                $(this).find('.off').css('display','none');
+                $(this).find('.on').css('display','block')
+            })
+        }
+    </script>
+</body>
+</html>

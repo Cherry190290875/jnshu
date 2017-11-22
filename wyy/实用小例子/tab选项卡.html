@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab选项卡</title>
+    <style>
+        input {
+            outline: none;
+        }
+        #div1 .active {
+            background: yellow;
+        }
+        #div1 div {
+            width: 200px;
+            height:200px;
+            background: #ccc;
+            border:1px solid #999;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <input type="button" value="教育" class="active" >
+        <input type="button" value="培训" >
+        <input type="button" value="招生" >
+        <input type="button" value="出国" >
+        <div style="display: block;">111</div>
+        <div>222</div>
+        <div>333</div>
+        <div>444</div>
+    </div>
+    <script>
+        window.onload=function () {
+            var oDiv = document.getElementById('div1');
+            var btn = oDiv.getElementsByTagName('input');
+            var div =oDiv.getElementsByTagName('div');
+            for (var i=0;i<btn.length;i++){
+                btn[i].index = i;
+                btn[i].onclick=function(){
+                    for(var i=0;i<btn.length;i++){
+                        btn[i].className = "";
+                        div[i].style.display = "none"
+                    }
+                    this.className = "active";
+                    div[this.index].style.display = "block"
+                }
+            }
+        }
+    </script>
+</body>
+</html>

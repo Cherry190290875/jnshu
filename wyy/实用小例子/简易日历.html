@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简易日历</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .calendar {
+            width: 350px;
+            margin: 0 auto;
+            padding:10px;
+            border:2px solid red;
+        }
+        ul {
+            list-style: none;
+            width: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-bottom: 1px solid #DDD;
+            border-right:1px solid #DDD;
+        }
+        ul::after {
+            clear: both;
+            content: '';
+            height:0;
+            display: block;
+            visibility: visible;
+        }
+        ul li {
+            width: 100px;
+            height:100px;
+            float: left;
+            border-left: 1px solid #DDD;
+            border-top:1px solid #DDD;
+            box-sizing: border-box;
+        }
+        ul li h2 {
+            display: block;
+            text-align:center;
+            line-height: 100px;
+        }
+        ul li p {
+            display: none;
+            line-height: 100px;
+            text-align: center;
+        }
+        .text {
+            width: 300px;
+            margin: 0 auto;
+            border:1px solid darkred;
+            margin-top: 10px;
+            height:100px;
+        }
+        .text h2 {
+            text-align: center;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="tab" class="calendar">
+        <ul>
+            <li class="active">
+                <h2>1</h2>
+                <p>JAN</p>
+            </li>
+            <li>
+                <h2>2</h2>
+                <p>FER</p>
+            </li>
+            <li>
+                <h2>3</h2>
+                <p>MAR</p>
+            </li>
+            <li>
+                <h2>4</h2>
+                <p>APRI</p>
+            </li>
+            <li>
+                <h2>5</h2>
+                <p>MAY</p>
+            </li>
+            <li>
+                <h2>6</h2>
+                <p>JUN</p>
+            </li>
+            <li>
+                <h2>7</h2>
+                <p>JUL</p>
+            </li>
+            <li>
+                <h2>8</h2>
+                <p>AUG</p>
+            </li>
+            <li>
+                <h2>9</h2>
+                <p>SEP</p>
+            </li>
+            <li>
+                <h2>10</h2>
+                <p>OCT</p>
+            </li>
+            <li>
+                <h2>11</h2>
+                <p>NOV</p>
+            </li>
+            <li>
+                <h2>12</h2>
+                <p>DEC</p>
+            </li>
+
+        </ul>
+        <div class="text">
+            <h2>1月活动</h2>
+            <p>快过年了，大家可以商量着去哪里玩吧~</p>
+        </div>
+    </div>
+    <script>
+        var tab = document.getElementById('tab');
+        var ul = tab.getElementsByTagName('ul');
+    </script>
+</body>
+</html>

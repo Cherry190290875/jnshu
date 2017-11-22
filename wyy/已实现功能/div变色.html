@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div变色</title>
+    <style>
+        #div1{
+            width: 200px;
+            height:200px;
+            background: blue;
+            border:1px solid #DDD;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="变宽" onclick="setColor('width','400px')">
+    <input type="button" value="变长" onclick="setColor('height','300px')">
+    <input type="button" value="变绿" onclick="setColor('background','green')">
+    <div id="div1"></div>
+    <script>
+        function setColor(name ,value) {
+            var oDiv = document.getElementById('div1')
+            oDiv.style[name] = value
+        }
+    </script>
+</body>
+</html>

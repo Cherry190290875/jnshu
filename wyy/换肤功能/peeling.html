@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页换肤</title>
+    <link rel="stylesheet" href="red.css" id="red">
+</head>
+<body>
+    <input type="button" value="皮肤1" onclick="skinRed()">
+    <input type="button" value="皮肤2" onclick="skinGreen()">
+    <script>
+        function skinRed() {
+            var oL = document.getElementById('red')
+            oL.href="red.css"
+        }
+        function skinGreen() {
+            var oL = document.getElementById('red')
+            oL.href="green.css"
+        }
+    </script>
+</body>
+</html>

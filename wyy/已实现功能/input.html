@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击按钮input内容改变</title>
+</head>
+<body>
+    <input type="text" id="text">
+    <input type="button" value="改变文字" onclick="setText()">
+    <script>
+        function setText(){
+            var a = "value"
+            var text = document.getElementById('text')
+            /*text.value= "这是改变后的文字"*/
+            text[a]="这是改变后的文字"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if判断</title>
+    <style>
+        .div {
+            background: yellowgreen;
+            height: 200px;
+            width: 100px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="可下拉选择" onclick="show()">
+    <div class="div">
+        这是显示的内容
+    </div>
+    <a href="javascript:;"></a>
+    <script>
+        function show() {
+            var oDiv = document.getElementsByClassName('div')[0]
+            if(oDiv.style.display == "block") {
+                oDiv.style.display = "none"
+            }else {
+                oDiv.style.display = "block"
+            }
+        }
+    </script>
+</body>
+</html>

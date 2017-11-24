@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+</head>
+<body>
+    <input type="button" id="on" value="开启">
+    <input type="button" id="off" value="关闭">
+    <script>
+        window.onload=function(){
+            var on = document.getElementById('on')
+            var off= document.getElementById('off')
+            var timer;
+            on.onclick=function(){
+                timer=setInterval(function(){
+                    alert('a')
+                },1000)
+            }
+
+            off.onclick=function(){
+                clearInterval(timer)
+            }
+
+        }
+    </script>
+</body>
+</html>

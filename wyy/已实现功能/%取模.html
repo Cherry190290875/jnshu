@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>取模</title>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        window.onload=function(){
+            var ali = document.getElementsByTagName('li')
+            for(var i=0;i<ali.length;i++){
+               if(i%2 == 0) {
+                   ali[i].style.background="#ccc"
+               }else {
+                   ali[i].style.background="red"
+               }
+            }
+            var s = 156;
+            var m= parseInt(s/60)+'分'
+            var ms = (156%60)+'秒'
+            console.log(m)
+            console.log(ms)
+
+            var name = "abc";
+            var sex = "男";
+            switch (sex) {
+                case "男":
+                    alert(name+"先生，您好");
+                    break;
+                case "女":
+                    alert(name+'女士，您好');
+                    break;
+                default:
+                    alert(name+'你好')
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

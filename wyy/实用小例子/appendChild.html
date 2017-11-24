@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建元素追加</title>
+</head>
+<body>
+    <input type="text" id="text">
+    <input type="button" value="创建li" id="btn">
+    <ul>
+
+    </ul>
+    <script>
+        window.onload=function(){
+            var oBtn = document.getElementById('btn');
+            var oUl = document.getElementsByTagName('ul')[0];
+            var oText = document.getElementById('text')
+            oBtn.onclick=function(){
+                var oli = document.createElement('li');
+                var ali = document.getElementsByTagName('li')
+                if (ali.length>0) {
+                    //追加到最上面
+                    oUl.insertBefore(oli,ali[0]).innerHTML = oText.value;
+                } else {
+                    //追加到最后
+                     oUl.appendChild(oli).innerHTML = oText.value;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

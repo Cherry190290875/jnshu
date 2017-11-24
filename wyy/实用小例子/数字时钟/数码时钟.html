@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数码时钟</title>
+    <style>
+        .div {
+            width: 1200px;
+            height:224px;
+            margin: 0 auto;
+            background: red;
+            color:#FFF;
+            line-height: 224px;
+            font-size: 100px;
+            text-align: center;
+        }
+        img  {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div">
+        <img src="img/0.png" alt="">
+        <img src="img/0.png" alt="">
+        :
+        <img src="img/0.png" alt="">
+        <img src="img/0.png" alt="">
+        :
+        <img src="img/0.png" alt="">
+        <img src="img/0.png" alt="">
+    </div>
+    <script>
+        var aImg=document.getElementsByTagName('img')
+        function toDou(n) {
+            if(n<10){
+                return "0"+n
+            }else {
+                return ""+n
+            }
+        }
+        function timer(){
+            var oDate = new Date();
+            var str = toDou(oDate.getHours())+toDou(oDate.getMinutes())+toDou(oDate.getSeconds())
+            for(var i=0;i<aImg.length;i++) {
+                aImg[i].src="img/"+str[i]+".png"
+                //为了兼容IE9以下，使用str.charAt(i)
+            }
+        }
+        setInterval(timer,1000)
+        timer()
+    </script>
+</body>
+</html>

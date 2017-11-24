@@ -58,6 +58,14 @@
             text-align: center;
             color:red;
         }
+        .active p{
+            display: block;
+            background: #000;
+            color:#FFF;
+        }
+        .active h2 {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -119,8 +127,37 @@
         </div>
     </div>
     <script>
+        var arry = [
+            '快过年了，大家可以商量着去哪里玩吧~',
+            'wewewqfeeeryue二月',
+            '三月份的时候了',
+            '四月份的时候了，马上五月',
+            'wuyuefen l ',
+            '六月份了',
+            'qiyuefenle',
+            'bayuefen l ',
+            'jiuyuefen',
+            'shiyuefen',
+            'shiyiyuefen',
+            'shieryuefen'
+        ]
         var tab = document.getElementById('tab');
         var ul = tab.getElementsByTagName('ul');
+        var ali = tab.getElementsByTagName('li');
+        var text = tab.getElementsByClassName('text')[0];
+        for(var i=0;i<ali.length;i++){
+            ali[i].index=i
+            ali[i].onmouseover=function(){
+               for(var i=0;i<ali.length;i++){
+                    ali[i].className=""
+                }
+               this.className= "active"
+                console.log('arry[0].innerHTML')
+               text.innerHTML = "<h2>"+(this.index+1)+"月活动</h2> <p> "+arry[this.index]+"</p>"
+
+            }
+        }
+        console.log("abg"+12+5+"dec")
     </script>
 </body>
 </html>

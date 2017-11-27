@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淡入淡出图片</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height:200px;
+            background: red;
+            filter: alpha(opacity:30);
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+    <script>
+        var timer;
+        var alpha = 30;
+        var oDiv1 = document.getElementById('div1')
+        function startMove(iTarget,speed){
+            clearInterval(timer)
+            timer = setInterval(function () {
+                var speed= 0;
+                if (alpha <iTarget){
+                    speed = 0.1
+                }else  {
+                    speed = -0.1
+                }
+                if(alpha == iTarget){
+                    clearInterval(timer)
+                }else {
+                    alpha +=speed
+                    oDiv1.style.filter = "alpha(opacity:'+alpha+')"
+                    oDiv1.style.opacity = alpha/100;
+                }
+            },10)
+        }
+        oDiv1.onmouseover=function () {
+            startMove(100)
+        }
+        oDiv1.onmouseout=function () {
+            startMove(30)
+        }
+    </script>
+</body>
+</html>

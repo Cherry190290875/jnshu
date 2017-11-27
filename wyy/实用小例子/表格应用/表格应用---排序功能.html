@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" value="排序" id="btn">
+    <table border="1" width="500" id="tab1" >
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>Blue</td>
+            <td>27</td>
+            <td><a href="javascript:;">删除</a></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>张薇</td>
+            <td>27</td>
+            <td><a href="javascript:;">删除</a></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>王五</td>
+            <td>27</td>
+            <td><a href="javascript:;">删除</a></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>张伟</td>
+            <td>27</td>
+            <td><a href="javascript:;">删除</a></td>
+        </tr><tr>
+            <td>2</td>
+            <td>asanFasd</td>
+            <td>27</td>
+            <td><a href="javascript:;">删除</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>李四</td>
+            <td>27</td>
+            <td><a href="javascript:;">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <script>
+        var oBtn = document.getElementById('btn');
+        var oTab = document.getElementById('tab1');
+        oBtn.onclick= function () {
+            var arr = [];
+            for(var i=0;i<oTab.tBodies[0].rows.length;i++){
+                arr[i]=oTab.tBodies[0].rows[i]
+            }
+            arr.sort(function(td1,td2){
+                var min = parseInt(td1.cells[0].innerHTML);
+                var max = parseInt(td2.cells[0].innerHTML);
+                return min-max
+            })
+            for(var i=0;i<arr.length;i++){
+                oTab.tBodies[0].appendChild(arr[i])
+            }
+        }
+    </script>
+</body>
+</html>

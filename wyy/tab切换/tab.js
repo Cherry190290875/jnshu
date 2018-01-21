@@ -1,0 +1,31 @@
+/**
+ * Created by Cherry on 2018/1/21.
+ */
+//封装利用ID获取的方法
+function  $(id) {
+    return typeof id === 'string'?document.getElementById(id):id;
+}
+window.onload = function () {
+   //获取鼠标滑过或点击的标签和要切换的内容的元素
+    var titles = $('notice-tit').getElementsByTagName('li');
+    divs = $('notice-con').getElementsByTagName('div');
+    if (titles.length !== divs.length){
+        return false;
+    }else {
+        for (var i=0;i<titles.length;i++){
+            //赋值索引为i
+            titles[i].id = i;
+            titles[i].onmouseover=function () {
+                //清除所有li上的class
+                for(var j=0;j<titles.length;j++){
+                    titles[j].className = "";
+                    divs[j].style.display="none"
+                }
+                //设置当前为高亮显示
+                this.className = "select";
+                divs[this.id].style.display="block"
+
+            }
+        }
+    }
+};
